@@ -8,11 +8,15 @@ import {useState} from 'react';
 function App() {
   const [name, setName] = useState('');
 
+  const handleChange = (newValue) => {
+    setName(newValue);
+  }
+  //console.log("Rendered")
   return (
     <div>
       <header>
       </header>
-      <SearchForm name={name} setName={setName}/>
+      <SearchForm name={name} handleChange={handleChange}/>
       <CharactersList characters={characters} name={name}/>
     </div>
   );
